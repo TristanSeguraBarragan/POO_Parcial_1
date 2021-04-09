@@ -65,6 +65,9 @@ public class P1Proyecto_LoxxO {
             case 3:
                 buscarCliente();
                 break;
+            case 4:
+                eliminarCliente();
+                break;
             case 0:
                 System.out.println("¡HASTA LA PROXIMA!");
                 break;
@@ -83,7 +86,7 @@ public class P1Proyecto_LoxxO {
                     Clientes[espacios].setCodigoCliente(Integer.parseInt(leer.nextLine()));
                     System.out.print("INGRESA EL NOMBRE DEL CLIENTE: ");
                     Clientes[espacios].setNombreCliente(leer.nextLine());
-                    System.out.print("INGRRESA EL APELLIDO PATERNO DEL CLIENTE: ");
+                    System.out.print("INGRESA EL APELLIDO PATERNO DEL CLIENTE: ");
                     Clientes[espacios].setApellidoPaterno(leer.nextLine());
                     System.out.print("INGRESA EL APELLIDO MATERNO DEL CLIENTE: ");
                     Clientes[espacios].setApellidoMaterno(leer.nextLine());
@@ -93,6 +96,7 @@ public class P1Proyecto_LoxxO {
                     Clientes[espacios].setDireccion(leer.nextLine());
                     System.out.print("INGRESA LA EDAD DEL CLIENTE: ");
                     Clientes[espacios].setEdad(Integer.parseInt(leer.nextLine()));
+                    Clientes[espacios].setExistencia(1);
                     valor = true;
                     espacios = espacios + 1;
                     System.out.println("");
@@ -115,15 +119,18 @@ public class P1Proyecto_LoxxO {
             System.out.println("");
         }else{
             for(int i = 0; i<Clientes.length; i++){
-                System.out.println("----------------------------------------------------------------");
-                System.out.println("CODIGO DEL CLIENTE: "+Clientes[i].getCodigoCliente());
-                System.out.println("NOMBRE DEL CLIENTE: "+Clientes[i].getNombreCliente());
-                System.out.println("APELLIDO PATERNO DEL CLIENTE: "+Clientes[i].getApellidoPaterno());
-                System.out.println("APELLIDO MATERNO DEL CLIENTE: "+Clientes[i].getApellidoMaterno());
-                System.out.println("NUMERO DE TELEFONO DEL CLIENTE: "+Clientes[i].getTelefono());
-                System.out.println("DIRECCCION DEL CLIENTE: "+Clientes[i].getDireccion());
-                System.out.println("EDAD DEL CLIENTE: "+Clientes[i].getEdad());
-                System.out.println("");
+                if(Clientes[i].getExistencia() == 1){
+                    System.out.println("----------------------------------------------------------------");
+                    System.out.println("CODIGO DEL CLIENTE: "+Clientes[i].getCodigoCliente());
+                    System.out.println("NOMBRE DEL CLIENTE: "+Clientes[i].getNombreCliente());
+                    System.out.println("APELLIDO PATERNO DEL CLIENTE: "+Clientes[i].getApellidoPaterno());
+                    System.out.println("APELLIDO MATERNO DEL CLIENTE: "+Clientes[i].getApellidoMaterno());
+                    System.out.println("NUMERO DE TELEFONO DEL CLIENTE: "+Clientes[i].getTelefono());
+                    System.out.println("DIRECCCION DEL CLIENTE: "+Clientes[i].getDireccion());
+                    System.out.println("EDAD DEL CLIENTE: "+Clientes[i].getEdad());
+                    System.out.println("");
+                }
+                
             }
         }
     }
@@ -154,9 +161,18 @@ public class P1Proyecto_LoxxO {
             
             switch(n){
                 case 1:
-                    System.out.print("INGRESA EL CODIGO DEL CLIENTE QUE DESEAS BUSCAR: ");
-                    codigo = Integer.parseInt(leer.nextLine());
-                    mostrarClienteCodigo(codigo);
+                    do{
+                        try{
+                            System.out.print("INGRESA EL CODIGO DEL CLIENTE QUE DESEAS BUSCAR: ");
+                            codigo = Integer.parseInt(leer.nextLine());
+                            mostrarClienteCodigo(codigo);
+                            valor = true;
+                        }catch(Exception e){
+                            System.out.println("¡NO PUEDES INGRESAR OTRO TIPO DE CARACTER!");
+                            valor = false;
+                        }
+                    }while(valor == false);
+                    
                     break;
                 case 2:
                     System.out.print("INGRESA EL NOMBRE DEL CLIENTE QUE DESEAS BUSCAR: ");
@@ -208,6 +224,108 @@ public class P1Proyecto_LoxxO {
                 System.out.println("EDAD DEL CLIENTE: "+Clientes[i].getEdad());
                 System.out.println("");
                 break;
+            }
+        }
+    }
+    
+    //METODO PARA ELIMINAR UN CLIENTE
+    public static void eliminarCliente(){
+        int n = 0, codigo = 0;
+        String nombre;
+        if(espacios == 0){
+            System.out.println("¡NO EXISTE REGIISTRO DE CLIENTES!");
+            System.out.println("");
+        }else{
+            do{
+                try{
+                    System.out.println("ELIMINAR POR:");
+                    System.out.println("1.- CODIGO.");
+                    System.out.println("2.- NOMBRE.");
+                    System.out.println("0.- VOLVER AL MENU ANTERIOR.");
+                    System.out.print("INGRESA LA OPCION DESEADA: ");
+                    n = Integer.parseInt(leer.nextLine());
+                    valor = true;
+                }catch(Exception e){
+                    System.out.println("¡NO PUEDES INGRESAR OTRO TIPO DE CARACTER!");
+                    valor = false;
+                }
+            }while(valor == false);
+            //SWITCH PARA IDENTIFICAR SI SERA POR CODIGO O NOMBRE
+            
+            switch(n){
+                case 1:
+                    do{
+                        try{
+                            System.out.print("INGRESA EL CODIGO DEL CLIENTE QUE DESEAS ELIMINAR: ");
+                            codigo = Integer.parseInt(leer.nextLine());
+                            eliminarClienteCodigo(codigo);
+                            valor = true;
+                        }catch(Exception e){
+                            System.out.println("¡NO PUEDES INGRESAR OTRO TIPO DE CARACTER!");
+                            valor = false;
+                        }
+                    }while(valor == false);
+                    
+                    break;
+                case 2:
+                    do{
+                        try{
+                            System.out.print("INGRESA EL NOMBRE DEL CLIENTE QUE DESEAS ELIMINAR: ");
+                            nombre = leer.nextLine();
+                            eliminarClienteNombre(nombre);
+                            valor = true;
+                        }catch(Exception e){
+                            System.out.println("¡NO PUEDES INGRESAR OTRO TIPO DE CARACTER!");
+                            valor = false;
+                        }
+                    }while(valor == false);
+                    
+                    break;
+                case 0:
+                    System.out.println("VOLVIENDO AL MENU ANTERIOR");
+                    System.out.println("");
+                    break;
+                default:
+                    System.out.println("¡NO EXISTE LA OPCION QUE HAS INGRESADO!");
+                    System.out.println("");
+                }
+            
+        }
+    }
+    
+    //METODO PARA ELIMINAR UN CLIENTE A TRAVES DEL CODIGO
+    public static void eliminarClienteCodigo(int codigo){
+        for(int i = 0; i<Clientes.length; i++){
+            if(codigo == Clientes[i].getCodigoCliente()){
+                Clientes[i].setCodigoCliente(0);
+                Clientes[i].setNombreCliente(null);
+                Clientes[i].setApellidoPaterno(null);
+                Clientes[i].setApellidoMaterno(null);
+                Clientes[i].setTelefono(null);
+                Clientes[i].setDireccion(null);
+                Clientes[i].setEdad(0);
+                Clientes[i].setExistencia(0);
+                System.out.println("¡CLIENTE ELIMINADO EXITOSAMENTE!");
+                espacios -= 1;
+                break;
+            }
+        }
+    }
+    
+    //METODO PARA ELIMINAR UN CLIENTE A TRAVES DEL NOMBRE
+    public static void eliminarClienteNombre(String nombre){
+        for(int i = 0; i<Clientes.length; i++){
+            if(nombre.equals(Clientes[i].getNombreCliente())){
+                Clientes[i].setCodigoCliente(0);
+                Clientes[i].setNombreCliente(null);
+                Clientes[i].setApellidoPaterno(null);
+                Clientes[i].setApellidoMaterno(null);
+                Clientes[i].setTelefono(null);
+                Clientes[i].setDireccion(null);
+                Clientes[i].setEdad(0);
+                Clientes[i].setExistencia(0);
+                System.out.println("¡CLIENTE ELIMINADO EXITOSAMENTE!");
+                espacios -= 1;
             }
         }
     }

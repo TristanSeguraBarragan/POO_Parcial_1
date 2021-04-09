@@ -1,9 +1,13 @@
 package Parcial_1;
 
 public class P1Proyecto_Clientes {
-    private int codigoCliente, edad;
+    private int codigoCliente, edad, existencia;
     private String nombreCliente, apellidoPaterno, apellidoMaterno, telefono, direccion;
 
+    public void setExistencia(int existencia) {
+        this.existencia = existencia;
+    }
+    
     public void setCodigoCliente(int codigoCliente) {
         this.codigoCliente = codigoCliente;
     }
@@ -32,6 +36,10 @@ public class P1Proyecto_Clientes {
         this.direccion = direccion;
     }
 
+    public int getExistencia() {
+        return existencia;
+    }
+    
     public int getCodigoCliente() {
         return codigoCliente;
     }
