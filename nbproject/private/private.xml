@@ -3,16 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Main.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Animales.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Aguila.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Comportamientos.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Salmon.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Oviparo.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Ave.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Pez.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Trucha.java</file>
-            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/HerenciaAnimales/Paloma.java</file>
+            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/OperacionesPolinomios/Polinomios.java</file>
+            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/OperacionesPolinomios/Monomio.java</file>
+            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/OperacionesPolinomios/Trinomio.java</file>
+            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/Polinomios/Main.java</file>
+            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/OperacionesPolinomios/Main.java</file>
+            <file>file:/C:/Users/trist/OneDrive/Documentos/NetBeansProjects/POO/src/OperacionesPolinomios/Binomio.java</file>
         </group>
     </open-files>
 </project-private>
