@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package Cuadrilatero;
+package CuadrilateroCool;
 
 /**
  * 
@@ -13,7 +13,7 @@ package Cuadrilatero;
 public abstract class Cuadrilatero {
     protected double x1, y1, x2, y2, x3, y3, x4, y4, area;
 
-    public Cuadrilatero(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4) {
+    public Cuadrilatero(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double area) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
@@ -22,6 +22,11 @@ public abstract class Cuadrilatero {
         this.y3 = y3;
         this.x4 = x4;
         this.y4 = y4;
+        this.area = area;
+    }
+    
+    public Cuadrilatero(){
+        
     }
 
     public double getX1() {
@@ -95,8 +100,12 @@ public abstract class Cuadrilatero {
     public void setArea(double area) {
         this.area = area;
     }
-
     
+    public abstract double calcularArea();
     
+    public double calcularDistancia(double X1, double Y1, double X2, double Y2){
+        double distancia = Math.sqrt(Math.pow((X2-X1), 2) + Math.pow((Y2-Y1), 2));
+        return distancia;
+    }
     
 }
